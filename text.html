@@ -1,0 +1,50 @@
+<!-- Deluppgift 1: Struktur
+Skapa strukturen för applikationen. HTML struktur och element väljer du till viss del.
+Nedanför följer en kravlista på minimumkrav för HTML strukturen:
+● Komponenterna som skapar nya kontakter, ska bestå av
+○ Ett textfält där användaren kan ange namn
+○ Ett textfält där användaren kan ange telefonnummer
+○ En knapp för att skapa ny kontakt
+● kontaktlista, ska bestå av
+○ Flera kontakter (om användaren har lagt till kontakter, annars tom)
+○ Ifyllda textfält för både namn och telefonnummer. Bägge fälten skall vara
+disabled, som default.
+○ Förutom kontaktuppgifterna, ska det även finnas knappar kopplade till
+kontakten för att
+■ Ändra kontaktuppgifter
+■ Radera kontakt --> 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactList</title>
+    <!-- Font Awesome egna fonts så jag kan ändra typsnitt-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    </head>
+    <body> 
+     
+        <div id="Container">
+        <!-- Komponent för att skapa nya kontakter -->
+        <div id="contact-form">
+            <h1> KONTAKTFORMULÄR <i class="fa-solid fa-mobile-screen-button" style="color: #adadad;"></i></h1>
+            <input type="text" id="name" placeholder="Namn">
+            <input type="text" id="phone" placeholder="Telefonnummer">
+            <button id="add-contact"><i class="fa-solid fa-address-book" style="color: #adadad;"></i> Skapa ny kontakt </button>
+            <button id="clear-list"><i class="fa-solid fa-trash" style="color: #adadad;"></i> Radera lista </button>
+                <!-- Kontaktlista -->
+            <div id="contact-list">
+                <!-- Kontakter kommer att läggas till här dynamiskt via JavaScript -->
+            </div>    
+        <script src="script.js"></script>
+        </div>
+        </div>   
+    </body>
+    </html>
+    
