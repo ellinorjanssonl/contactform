@@ -17,11 +17,11 @@
 
         addContactButton.addEventListener('click', function() {
             if (nameInput.value === '' || phoneInput.value === '') {
-                displayErrorMessage('Du måste fylla i både namn och telefonnummer!', 'red');
+                displayErrorMessage('Du måste fylla i både namn och telefonnummer!', 'red', 4000);
             } else {
                 const contact = createContact(nameInput.value, phoneInput.value);
                 contactList.appendChild(contact);
-                displayErrorMessage('Du har lagt till en kontakt!', 'green');
+                displayErrorMessage('Du har lagt till en kontakt!', 'green', 3000);
             }
 
             nameInput.value = '';
@@ -29,11 +29,17 @@
         });
 
          // skapar en funktion för att skriva ut felmeddelanden i en viss färg (rött och grönt).
-         function displayErrorMessage(message, color) {
+            // Använd setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
+         function displayErrorMessage(message, color, duration) {
             const errorMessage = document.createElement('p');
             errorMessage.textContent = message;
             errorMessage.style.color = color;
             contactForm.appendChild(errorMessage);
+        
+            // Använder setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
+            setTimeout(function() {
+                errorMessage.remove(); // Tar bort felmeddelandet från DOM
+            }, duration);
         }
 
         
