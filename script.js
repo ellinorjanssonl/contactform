@@ -10,7 +10,7 @@
         const clearListButton = document.getElementById('clear-list');
         const contactList = document.getElementById('contact-list');
    
-        //skapar en cklick funktion för att lägga till en kontakt i listan. 
+        //skapar en funktion för att lägga till en kontakt i listan. 
 
         // Gör en if sats som säger att om nameInput och phoneInput är tomma så ska den skriva ut ett felmeddelande i rött.
         // annars så ska den skapa en ny kontakt och lägga till i listan och skriva ut ett meddelande i en färg.
@@ -18,25 +18,33 @@
         addContactButton.addEventListener('click', function() {
             if (nameInput.value === '' || phoneInput.value === '') {
                 displayErrorMessage('Du måste fylla i både namn och telefonnummer!', 'red', 4000);
+            } else if (!isValidPhoneNumber(phoneInput.value)) {
+                displayErrorMessage('Telefonnumret måste innehålla exakt 10 siffror och inga bokstäver!', 'red', 4000);
             } else {
                 const contact = createContact(nameInput.value, phoneInput.value);
                 contactList.appendChild(contact);
                 displayErrorMessage('Du har lagt till en kontakt!', 'green', 3000);
             }
-
+        
             nameInput.value = '';
             phoneInput.value = '';
         });
+        
+        function isValidPhoneNumber(phoneNumber) {
+            phoneNumber = phoneNumber.replace(/\s|-/g, '');
+        // Använder ett sätt för att kontrollera om telefonnumret innehåller exakt 10 siffror och inga bokstäver
+            return /^\d{10}$/.test(phoneNumber);
+        }
 
-         // skapar en funktion för att skriva ut felmeddelanden i en viss färg (rött och grönt).
-            // Använd setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
+        // skapar en funktion för att skriva ut felmeddelanden i en viss färg (rött och grönt).
+        // Använd setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
          function displayErrorMessage(message, color, duration) {
             const errorMessage = document.createElement('p');
             errorMessage.textContent = message;
             errorMessage.style.color = color;
             contactForm.appendChild(errorMessage);
         
-            // Använder setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
+        // Använder setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
             setTimeout(function() {
                 errorMessage.remove(); // Tar bort felmeddelandet från DOM
             }, duration);
