@@ -23,7 +23,7 @@
             } else {
                 const contact = createContact(nameInput.value, phoneInput.value);
                 contactList.appendChild(contact);
-                displayErrorMessage('Du har lagt till en kontakt!', 'green', 3000);
+                displayErrorMessage('Du har lagt till en kontakt!', 'white', 3000);
             }
         
             nameInput.value = '';
@@ -36,7 +36,7 @@
             return /^\d{10}$/.test(phoneNumber);
         }
 
-        // skapar en funktion för att skriva ut felmeddelanden i en viss färg (rött och grönt).
+        // skapar en funktion för att skriva ut felmeddelanden i en viss färg (rött och vitt).
         // Använd setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
          function displayErrorMessage(message, color, duration) {
             const errorMessage = document.createElement('p');

@@ -28,13 +28,13 @@ body {
 }
 
 h1 {
-    color: #d6d6d6;
+    color: #dfdfdf;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
     font-size: x-large;
     letter-spacing: 5px;
     margin-bottom: 15%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(56, 41, 38, 0.3);
     padding: 5%;
 }
 
@@ -56,6 +56,7 @@ input[type="text"] {
     margin: 5px;
     border-style: none;
     opacity: 0.8;
+    background-color: #ece2e2;
 }
 
 button {
