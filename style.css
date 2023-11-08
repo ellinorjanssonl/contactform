@@ -51,7 +51,13 @@ h1 {
 }
 ::placeholder {
     color: #181818;
+    font-size: 15px;
 }
+
+
+
+
+
 input[type="text"] {
     padding: 8px;
     font-size: 16px;

@@ -35,6 +35,9 @@
         // Använder ett sätt för att kontrollera om telefonnumret innehåller exakt 10 siffror och inga bokstäver
             return /^\d{10}$/.test(phoneNumber);
         }
+        
+        let errorSound = new Audio('sound-alert-device-turn-on-turn-off-win-done-chakongaudio-174892.mp3');
+        let successSound = new Audio('mech-keyboard-02-102918.mp3');
 
         // skapar en funktion för att skriva ut felmeddelanden i en viss färg (rött och vitt).
         // Använd setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
@@ -43,12 +46,22 @@
             errorMessage.textContent = message;
             errorMessage.style.color = color;
             contactForm.appendChild(errorMessage);
-        
+          
+
+            if (color === 'red') {
+                errorSound.play();
+            }
+            else if (color === 'white') {
+                successSound.play();
+            }
+            
         // Använder setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
             setTimeout(function() {
                 errorMessage.remove(); // Tar bort felmeddelandet från DOM
             }, duration);
         }
+   
+       
 
         
         // skapar en funktion för att rensa hela listan och inte bara en kontakt.
