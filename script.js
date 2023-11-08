@@ -36,8 +36,9 @@
             return /^\d{10}$/.test(phoneNumber);
         }
         
+        // skapar två variabler som innehåller ljudfiler. Ska spelas upp när man klickar på knapparna.
         let errorSound = new Audio('sound-alert-device-turn-on-turn-off-win-done-chakongaudio-174892.mp3');
-        let successSound = new Audio('mech-keyboard-02-102918.mp3');
+        let successSound = new Audio('success-1-6297.mp3');
 
         // skapar en funktion för att skriva ut felmeddelanden i en viss färg (rött och vitt).
         // Använd setTimeout för att ta bort felmeddelandet efter 'duration' millisekunder
@@ -61,9 +62,6 @@
             }, duration);
         }
    
-       
-
-        
         // skapar en funktion för att rensa hela listan och inte bara en kontakt.
         clearListButton.addEventListener('click', function() {
             clearContactList();
