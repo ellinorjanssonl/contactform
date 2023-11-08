@@ -95,3 +95,49 @@ li {
     cursor: pointer;
     
 }
+
+@media screen and (max-width: 600px) {
+    #contact-form {
+        margin-left: 5%;
+        width: 90%;
+        padding: 5%;
+        height: 90vh;
+    }
+    #container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+    
+    input [type="text"] {
+        font-size: 15px;
+        display: block;
+    }
+
+    input {
+        font-size: 15px;
+        display: block;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 12px;
+        margin-bottom: 25%;
+        padding: 15%;
+        background-color: rgba(33, 33, 33, 0.5);
+    }
+    button {
+        font-size: 12px;
+        width: 95%;
+    }
+    li {
+        font-size: 12px;
+    }
+
+    body{
+    background-image: none;
+    background-color: #818181;
+    }
+
+    
+}

@@ -1,6 +1,7 @@
 
       // först skapar jag en funtion som heter DOMContentLoaded som gör att sidan laddas in först innan den kör koden. 
       // samt hämtar ID från HTML filen och lägger in i variabler.
+    
 
     document.addEventListener('DOMContentLoaded', function() {
         const contactForm = document.getElementById('contact-form');
